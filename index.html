@@ -196,8 +196,7 @@
                 // Hide the access code input and submit button
                 document.getElementById('accessCodeInput').classList.add('hidden');
                 document.getElementById('submitBtn').classList.add('hidden');
-                // Reset the counter
-                resetCounter();
+                // Do not reset the counter when the correct code is entered
             } else {
                 // Show "Wrong Code!" message for 2 seconds
                 let messageElement = document.getElementById('accessCodeMessage');
