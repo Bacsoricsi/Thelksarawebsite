@@ -1,232 +1,132 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Page</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
-
-        body {
-            margin: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            overflow: hidden;
-            color: white;
-        }
-        .container {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        #instagramBtn, #submitBtn {
-            background-color: black;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            margin: 10px 0;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            font-family: 'Montserrat', sans-serif; /* Apply Montserrat font to Instagram button */
-            font-weight: 700; /* Use the bold (700) weight */
-        }
-        #instagramBtn:hover, #submitBtn:hover {
-            background-color: #333;
-        }
-        #submitBtn {
-            background-color: #1E90FF;
-            color: white;
-        }
-        #submitBtn:hover {
-            background-color: #1C7ED6;
-        }
-        #accessCodeInput {
-            padding: 10px;
-            font-size: 16px;
-            margin-top: 10px;
-            border-radius: 10px;
-            border: none;
-            outline: none;
-            margin-bottom: 10px;
-        }
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            animation: move 25s linear infinite;
-            z-index: 0;
-        }
-        .circle:nth-child(1) {
-            width: 200px;
-            height: 200px;
-            top: -100px;
-            left: -100px;
-        }
-        .circle:nth-child(2) {
-            width: 150px;
-            height: 150px;
-            top: 30%;
-            left: -50px;
-            animation-duration: 20s;
-        }
-        .circle:nth-child(3) {
-            width: 100px;
-            height: 100px;
-            bottom: -50px;
-            right: -50px;
-            animation-duration: 30s;
-        }
-        .circle:nth-child(4) {
-            width: 250px;
-            height: 250px;
-            top: 50%;
-            right: -125px;
-            animation-duration: 35s;
-        }
-        .circle:nth-child(5) {
-            width: 120px;
-            height: 120px;
-            bottom: 10%;
-            left: 50%;
-            animation-duration: 40s;
-        }
-        .circle:nth-child(6) {
-            width: 180px;
-            height: 180px;
-            top: 20%;
-            right: -90px;
-            animation-duration: 45s;
-        }
-        .circle:nth-child(7) {
-            width: 160px;
-            height: 160px;
-            bottom: 30%;
-            left: -80px;
-            animation-duration: 50s;
-        }
-        .circle:nth-child(8) {
-            width: 140px;
-            height: 140px;
-            top: 60%;
-            left: -70px;
-            animation-duration: 55s;
-        }
-        .circle:nth-child(9) {
-            width: 220px;
-            height: 220px;
-            bottom: 60%;
-            right: -110px;
-            animation-duration: 60s;
-        }
-        @keyframes move {
-            0% {
-                transform: translate(0, 0) scale(1);
-            }
-            50% {
-                transform: translate(50vw, 50vh) scale(1.5);
-            }
-            100% {
-                transform: translate(0, 0) scale(1);
-            }
-        }
-        .hidden {
-            display: none;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Website</title>
+<style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+    background: linear-gradient(to bottom right, #4CAF50, #2196F3);
+    animation: gradientAnimation 15s ease infinite;
+  }
+  @keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .instagram-button {
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .instagram-button:hover {
+    background-color: #555;
+  }
+  .textbox {
+    margin-top: 20px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+    width: 200px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  .textbox:focus {
+    border-color: #2196F3;
+  }
+  .submit-button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #2196F3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .submit-button:hover {
+    background-color: #0b7dda;
+  }
+  .counter {
+    display: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    margin-top: 20px;
+  }
+  .error-message {
+    display: none;
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+  }
+</style>
 </head>
 <body>
-    <div class="container">
-        <button id="instagramBtn">Instagram</button>
-        <input type="text" id="accessCodeInput" placeholder="Web. Admin">
-        <button id="submitBtn">Submit</button>
-        <p id="counter" class="hidden">Number of visits: <span id="visitCount">0</span></p>
-        <span id="accessCodeMessage" class="hidden" style="color: red;">Wrong Code!</span>
-    </div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    <div class="circle"></div>
-    
-    <script>
-        // JavaScript code for handling button click, counter, and access code
+<div class="container">
+  <a href="https://www.instagram.com/lk_.sara/" class="instagram-button" id="instagramButton">Instagram</a>
+  <input type="text" class="textbox" id="codeInput" placeholder="Web. Admin" maxlength="4">
+  <button class="submit-button" onclick="checkCode()">Submit</button>
+  <div class="counter" id="clickCounter">0</div>
+  <div class="error-message" id="errorMessage"></div>
+</div>
 
-        // Function to increment and display the visit count
-        function incrementCounter() {
-            // Get current count from localStorage, default to 0 if null
-            let count = localStorage.getItem('visitCount');
-            count = parseInt(count) || 0; // Parse count as integer, default to 0
+<script>
+  // Counter initialization and storage
+  let clickCount = parseInt(localStorage.getItem('clickCount')) || 0;
 
-            // Increment the count
-            count++;
+  // Function to update counter display
+  function updateCounter() {
+    document.getElementById('clickCounter').textContent = clickCount;
+  }
 
-            // Update localStorage with new count
-            localStorage.setItem('visitCount', count);
+  // Function to handle Instagram button click
+  document.getElementById('instagramButton').addEventListener('click', function() {
+    clickCount++;
+    localStorage.setItem('clickCount', clickCount);
+    updateCounter();
+  });
 
-            // Update the counter display
-            document.getElementById('visitCount').textContent = count;
-        }
+  // Function to check and handle code submission
+  function checkCode() {
+    let userInput = document.getElementById('codeInput').value.trim();
+    if (userInput === "0112") {
+      // Code is correct
+      document.getElementById('codeInput').style.display = 'none';
+      document.getElementById('clickCounter').style.display = 'block';
+      updateCounter();
+    } else {
+      // Incorrect code
+      document.getElementById('errorMessage').style.display = 'block';
+      document.getElementById('errorMessage').textContent = 'Incorrect Code!';
+      setTimeout(function() {
+        document.getElementById('errorMessage').style.display = 'none';
+      }, 2000); // Hide error message after 2 seconds
+    }
+    return false; // Prevent form submission
+  }
+</script>
 
-        // Function to reset the counter
-        function resetCounter() {
-            // Reset localStorage value to 0
-            localStorage.setItem('visitCount', 0);
-
-            // Update the counter display to 0
-            document.getElementById('visitCount').textContent = 0;
-        }
-
-        // Function to check access code
-        function checkAccessCode() {
-            let accessCode = document.getElementById('accessCodeInput').value;
-            if (accessCode === '0112') {
-                // Show the counter
-                document.getElementById('counter').classList.remove('hidden');
-                // Hide the access code input and submit button
-                document.getElementById('accessCodeInput').classList.add('hidden');
-                document.getElementById('submitBtn').classList.add('hidden');
-                // Do not reset the counter when the correct code is entered
-            } else {
-                // Show "Wrong Code!" message for 2 seconds
-                let messageElement = document.getElementById('accessCodeMessage');
-                messageElement.classList.remove('hidden');
-                setTimeout(function() {
-                    messageElement.classList.add('hidden');
-                }, 2000);
-            }
-        }
-
-        // Add click event listener to the Instagram button
-        document.getElementById('instagramBtn').addEventListener('click', function() {
-            // Redirect user to Instagram link
-            window.location.href = 'https://www.instagram.com/lk_.sara/';
-            // Increment the counter when Instagram button is clicked
-            incrementCounter();
-        });
-
-        // Add click event listener to the Submit button
-        document.getElementById('submitBtn').addEventListener('click', function() {
-            // Check the access code
-            checkAccessCode();
-        });
-
-        // Display initial count on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get and display the initial count from localStorage
-            let count = localStorage.getItem('visitCount');
-            document.getElementById('visitCount').textContent = count || 0;
-        });
-    </script>
 </body>
 </html>
